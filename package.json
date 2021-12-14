@@ -1,0 +1,24 @@
+{
+  "name": "discord-template-bot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SimpleDiscordBotsJS/Discord-Template-Bot.git"
+  },
+  "author": "LeonusDH",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SimpleDiscordBotsJS/Discord-Template-Bot/issues"
+  },
+  "homepage": "https://github.com/SimpleDiscordBotsJS/Discord-Template-Bot#readme",
+  "dependencies": {
+    "ascii-table": "^0.0.9",
+    "discord.js": "^13.3.1",
+    "glob": "^7.2.0"
+  }
+}
