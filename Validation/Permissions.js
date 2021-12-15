@@ -1,3 +1,4 @@
+// Права
 module.exports = {
     Perms: [
         "CREATE_INSTANT_INVITE",

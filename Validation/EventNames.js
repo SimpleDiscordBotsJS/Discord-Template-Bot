@@ -1,3 +1,4 @@
+// Имена эвентов
 module.exports = {
     Events: [
         "applicationCommandCreate",
