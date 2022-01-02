@@ -24,5 +24,5 @@ Advantages:
 
 ## Start
  ```sh
- node index.js
+ node .
  ```
