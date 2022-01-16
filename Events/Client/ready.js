@@ -9,6 +9,6 @@ module.exports = {
      */
     execute(client) {
         Logger.Info(`✅ Запущен от имени бота: ${client.user.tag}!`);
-        client.user.setActivity("Pinguins sex", {type: "STREAMING"});
+        client.user.setActivity("Werry nice stream", {type: "STREAMING"});
     }
 }
