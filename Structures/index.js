@@ -23,3 +23,13 @@ client.commands = new Discord.Collection();
 
 //Подключение к боту и вывод ошибки в случае отсутствия токена, или если токен неверен.
 client.login(BOT_TOKEN).catch(() => Logger.Error("[BOT] Invalid Bot Login Token."));
+
+//===========================================================
+
+//Завершение работы
+process.on("SIGINT", () => {
+    Logger.Success("SIGINT detected, exiting...");
+    process.exit(0);
+})
+
+UpdateCheck.UpdateCheck();
