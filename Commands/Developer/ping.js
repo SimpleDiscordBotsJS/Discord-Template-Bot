@@ -6,7 +6,6 @@ module.exports = {
     description: "ping command",
     permission: "ADMINISTRATOR",
     /**
-     * 
      * @param {CommandInteraction} interaction 
      */
     execute(interaction) {

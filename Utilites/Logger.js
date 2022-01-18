@@ -17,8 +17,14 @@ function Info(text) {
 }
 
 //===========================================================//
+function Debug(text) {
+    console.info(construct('console') + `\x1b[1;35m[  DEBUG  ]: ` + text + `\x1b[0m`);
+    writeFile(logFilePath + '/' + logFileName, `[  DEBUG  ]: ` + text);
+}
+
+//===========================================================//
 function Success(text) {
-    console.log(construct('console') + `\x1b[34m[ SUCCESS ]: ` + text + `\x1b[0m`);
+    console.log(construct('console') + `\x1b[1;36m[ SUCCESS ]: ` + text + `\x1b[0m`);
     writeFile(logFilePath + '/' + logFileName, `[ SUCCESS ]: ` + text);
 }
 
@@ -43,6 +49,7 @@ function Error(text) {
 //===========================================================//
 
 exports.Info = Info;
+exports.Debug = Debug;
 exports.Success = Success;
 exports.Message = Message;
 exports.Warning = Warning;

@@ -1,5 +1,6 @@
 const { Client } = require("discord.js");
-const Logger = require("../../Utilites/Logger");
+const { Success } = require("../../Utilites/Logger");
+const UpdateCheck = require("../../Utilites/UpdateCheck");
 
 module.exports = {
     name: "ready",
@@ -8,7 +9,8 @@ module.exports = {
      * @param {Client} client 
      */
     execute(client) {
-        Logger.Info(`✅ Запущен от имени бота: ${client.user.tag}!`);
+        UpdateCheck();
+        Success(`✅ Запущен от имени бота: ${client.user.tag}!`);
         client.user.setActivity("Werry nice stream", {type: "STREAMING"});
     }
 }
