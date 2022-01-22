@@ -5,14 +5,14 @@ const { BOT_TOKEN } = require("./config.json"); // Загрузка конфиг
 const { promisify } = require("util");
 const { glob } = require("glob");
 const PG = promisify(glob);
-const Ascii = require("ascii-table");
+const { AsciiTable3 } = require("ascii-table3");
 
 //===========================================================
 
 client.commands = new Discord.Collection();
 
 ["Events", "Commands"].forEach(handler => {
-    require(`./Handlers/${handler}`)(client, PG, Ascii);
+    require(`./Handlers/${handler}`)(client, PG, AsciiTable3);
 });
 
 //===========================================================
@@ -25,37 +25,32 @@ client.on("warn", (error) => { Logger.Warning(error) });
 
 // Анти-краш и прочее...
 process.on("unhandledRejection", (reason, p) => {
-    Logger.Warning('=== unhandled Rejection ==='.toUpperCase());
-    Logger.Warning('Reason: ' + reason.stack ? String(reason.stack) : String(reason));
-    Logger.Warning('==========================='.toUpperCase());
+    Logger.Warning('=== unhandled Rejection ==='.toUpperCase(),
+    'Reason: ' + reason.stack ? String(reason.stack) : String(reason),
+    '==========================='.toUpperCase());
 });
-
 process.on("uncaughtException", (err, origin) => {
-    Logger.Error('=== uncaught Exception ==='.toUpperCase());
-    Logger.Error('Exception: ' + err.stack ? err.stack : err);
-    Logger.Error('==========================='.toUpperCase());
+    Logger.Error('=== uncaught Exception ==='.toUpperCase(),
+    'Exception: ' + err.stack ? err.stack : err,
+    '==========================='.toUpperCase());
 });
-
 process.on('uncaughtExceptionMonitor', (err, origin) => {
     Logger.Error('=== uncaught Exception Monitor ==='.toUpperCase());
 });
-
 process.on('beforeExit', (code) => {
-    Logger.Warning('======= before Exit ======='.toUpperCase());
-    Logger.Warning('Code: ' + code);
-    Logger.Warning('==========================='.toUpperCase());
+    Logger.Warning('======= before Exit ======='.toUpperCase(),
+    'Code: ' + code,
+    '==========================='.toUpperCase());
 });
-
 process.on('exit', (code) => {
-    Logger.Warning('========== exit =========='.toUpperCase());
-    Logger.Warning('Code: ' + code);
-    Logger.Warning('=========================='.toUpperCase());
+    Logger.Warning('========== exit =========='.toUpperCase(), 
+    'Code: ' + code,
+    '=========================='.toUpperCase());
 });
-
 process.on('multipleResolves', (type, promise, reason) => {
-    Logger.Warning('==== multiple Resolves ===='.toUpperCase());
-    Logger.Warning(type); Logger.Warning(promise); Logger.Warning(reason);
-    Logger.Warning('==========================='.toUpperCase());
+    Logger.Warning('==== multiple Resolves ===='.toUpperCase(),
+    type, promise, reason,
+    '==========================='.toUpperCase());
 });
 
 //===========================================================
