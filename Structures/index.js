@@ -1,5 +1,5 @@
-const Discord = require("discord.js"); // Библиотека
-const client = new Discord.Client({ intents: 32767 }); // Создание клиента
+const { Client, Collection } = require("discord.js"); // Библиотека
+const client = new Client({ intents: 32767 }); // Создание клиента
 const Logger = require("../Utilites/Logger"); // Логгер
 const { BOT_TOKEN } = require("./config.json"); // Загрузка конфига
 const { promisify } = require("util");
@@ -9,17 +9,12 @@ const { AsciiTable3 } = require("ascii-table3");
 
 //===========================================================
 
-client.commands = new Discord.Collection();
+client.commands = new Collection();
+client.buttons = new Collection();
 
-["Events", "Commands"].forEach(handler => {
+["Events", "Commands", "Buttons"].forEach(handler => {
     require(`./Handlers/${handler}`)(client, PG, AsciiTable3);
 });
-
-//===========================================================
-
-client.on("error", (error) => { Logger.Error(error) });
-client.on("warn", (error) => { Logger.Warning(error) });
-// client.on("debug", (message) => { Logger.Debug(message) }); // Debug
 
 //===========================================================
 
