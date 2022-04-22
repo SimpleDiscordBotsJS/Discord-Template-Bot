@@ -1,7 +1,7 @@
-const { Client, Collection } = require("discord.js"); // Библиотека
-const client = new Client({ intents: 32767 }); // Создание клиента
-const Logger = require("../Utilites/Logger"); // Логгер
-const { BOT_TOKEN } = require("./config.json"); // Загрузка конфига
+const { Client, Collection } = require("discord.js");
+const client = new Client({ intents: 32767 });
+const Logger = require("../Utilites/Logger");
+const { BOT_TOKEN } = require("./config.json");
 const { promisify } = require("util");
 const { glob } = require("glob");
 const PG = promisify(glob);
