@@ -3,7 +3,13 @@ const Logger = require("../../Utilites/Logger");
 
 module.exports = {
     name: "ping",
+    nameLocalizations: {
+        "ru": "пинг"
+    },
     description: "ping command",
+    descriptionLocalizations: {
+        "ru": "команда пинг"
+    },
     permission: "ADMINISTRATOR",
     /**
      * @param {CommandInteraction} interaction 
