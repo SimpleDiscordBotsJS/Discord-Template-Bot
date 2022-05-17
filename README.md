@@ -8,7 +8,8 @@ Advantages:
 ---
 
 > # Instructions
-## Customizing the Config.json File
+Rename `config.json.example` to `config.json`
+## Customizing the config.json File
  ```js
  {
     "BOT_TOKEN": "Enter_discord_bot_token"
