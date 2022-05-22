@@ -10,7 +10,6 @@ module.exports = function UpdateCheck() {
             Info("============================== Update Available ==================================");
             Info("Version: " + data.version);
             Info("Check commit : https://github.com/SimpleDiscordBotsJS/Discord-Template-Bot/commits/main");
-            // Info("Use 'npm run updatebot' to update");
             Info("==================================================================================");
         } else { Info("No Update Available") }})
     .catch((err) => { Error(err) });
