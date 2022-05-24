@@ -3,7 +3,7 @@ It's a template for discord bot
 
 Advantages:
  - It's a template...
- - Hendler's
+ - Handler's
 
 ---
 
@@ -12,7 +12,9 @@ Rename `config.json.example` to `config.json`
 ## Customizing the config.json File
  ```js
  {
-    "BOT_TOKEN": "Enter_discord_bot_token"
+    "BOT_TOKEN": "Enter_discord_bot_token",
+
+    "DEBUG_EVENT": false
  }
  ```
  
