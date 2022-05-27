@@ -22,43 +22,45 @@ client.buttons = new Collection();
 
 // Anti-Crash and more...
 process.on("unhandledRejection", (reason, p) => { Warning(
-    '=== unhandled Rejection ==='.toUpperCase(),
+    '=== [ Unhandled Rejection/Catch ] ==='.toUpperCase(),
     'Reason: ' + reason.stack ? String(reason.stack) : String(reason),
-    '==========================='.toUpperCase());
+    '====================================='.toUpperCase());
 });
 
 process.on("uncaughtException", (err, origin) => { Error(
-    '=== uncaught Exception ==='.toUpperCase(),
+    '=== [ Uncaught Exception ] ==='.toUpperCase(),
     'Exception: ' + err.stack ? err.stack : err,
-    '==========================='.toUpperCase());
+    '=============================='.toUpperCase());
 });
 
 process.on('uncaughtExceptionMonitor', (err, origin) => { Error(
-    '=== uncaught Exception Monitor ==='.toUpperCase());
+    '=== [ Uncaught Exception Monitor ] ==='.toUpperCase(),
+    err, origin,
+    '======================================'.toUpperCase());
 });
 
 process.on('beforeExit', (code) => { Warning(
-    '======= before Exit ======='.toUpperCase(),
+    '======= [ Before Exit ] ======='.toUpperCase(),
     'Code: ' + code,
-    '==========================='.toUpperCase());
+    '==============================='.toUpperCase());
 });
 
 process.on('warning', (code) => { Warning(
-    '========= warning ========='.toUpperCase(),
+    '========= [ Warning ] ========='.toUpperCase(),
     'Code: ' + code,
-    '==========================='.toUpperCase());
+    '==============================='.toUpperCase());
 });
 
 process.on('exit', (code) => { Warning(
-    '========== exit =========='.toUpperCase(), 
+    '========== [ Exit ] =========='.toUpperCase(), 
     'Code: ' + code,
-    '=========================='.toUpperCase());
+    '=============================='.toUpperCase());
 });
 
 process.on('multipleResolves', (type, promise, reason) => { Warning(
-    '==== multiple Resolves ===='.toUpperCase(),
+    '==== [ Multiple Resolves ] ===='.toUpperCase(),
     type, promise, reason,
-    '==========================='.toUpperCase());
+    '==============================='.toUpperCase());
 });
 
 //===========================================================
