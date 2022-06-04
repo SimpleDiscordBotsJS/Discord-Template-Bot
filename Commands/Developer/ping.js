@@ -16,10 +16,11 @@ module.exports = {
      */
     execute(interaction) {
         interaction.reply({content: "POING"});
-        Logger.Info("PONG");
         Logger.Warning("PONG");
         Logger.Success("PONG");
         Logger.Message("PONG");
+        Logger.Debug("PONG");
         Logger.Error("PONG");
+        Logger.Info("PONG");
     }
 }
