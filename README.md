@@ -5,6 +5,7 @@ It's a template for discord bot
 Advantages:
 
 - It's a template...
+- DJS 14
 - Handler's
 
 ---
