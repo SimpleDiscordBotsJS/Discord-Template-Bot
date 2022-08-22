@@ -1,22 +1,24 @@
-const { Client, Collection } = require("discord.js");
-const client = new Client({ intents: 131071 });
-const { Warning, Error, Success } = require("../Utilities/Logger");
-const { BOT_TOKEN } = require("./config.json");
-const { promisify } = require("util");
-const { glob } = require("glob");
-const PG = promisify(glob);
-const { AsciiTable3 } = require("ascii-table3");
+const { Warning, Error, Success } = require("./Utilities/Logger");
+const { Client, GatewayIntentBits, Partials, Collection } = require("discord.js");
+const { Guilds, GuildMembers, GuildMessages } = GatewayIntentBits;
+const { User, Message, GuildMember, ThreadMember } = Partials;
 
-//===========================================================
-
-client.commands = new Collection();
-client.buttons = new Collection();
-
-//===========================================================
-
-["Events", "Commands", "Buttons"].forEach(handler => {
-    require(`./Handlers/${handler}`)(client, PG, AsciiTable3);
+const client = new Client({ 
+    intents: [Guilds, GuildMembers, GuildMessages],
+    partials: [User, Message, GuildMember, ThreadMember] 
 });
+
+client.config= require("./config.json");
+const { loadEvents } = require("./Handlers/eventHandler");
+
+//===========================================================
+
+client.events = new Collection();
+client.commands = new Collection();
+
+//===========================================================
+
+loadEvents(client);
 
 //===========================================================
 
@@ -66,10 +68,13 @@ process.on('multipleResolves', (type, promise, reason) => { Warning(
 //===========================================================
 
 
-client.login(BOT_TOKEN).catch(() => {
-    Error("[BOT] Invalid Bot Login Token.");
-    process.exit();
-});
+client.login(client.config.BOT_TOKEN).then(() => {
+        Success("[BOT] Signed.")
+    }).catch(() => {
+        Error("[BOT] Invalid Bot Login Token.");
+        process.exit();
+    }
+);
 
 //===========================================================
 
