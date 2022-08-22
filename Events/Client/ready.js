@@ -1,5 +1,6 @@
 const { Client } = require("discord.js");
 const { Success } = require("../../Utilities/Logger");
+const { loadCommands } = require("../../Handlers/commandHandler");
 
 module.exports = {
     name: "ready",
@@ -8,7 +9,9 @@ module.exports = {
      * @param {Client} client 
      */
     execute(client) {
-        Success(`✅ Запущен от имени бота: ${client.user.tag}!`);
+        Success(`✅ Launched as a bot: ${client.user.tag}!`);
         client.user.setActivity("Super Bot", {type: "STREAMING"});
+
+        loadCommands(client);
     }
 }
