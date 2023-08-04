@@ -8,20 +8,22 @@ const client = new Client({
     partials: [User, Message, GuildMember, ThreadMember] 
 });
 
-client.config= require("./config.json");
-const { loadEvents } = require("./Handlers/eventHandler");
-
 //===========================================================
+client.config = require("./config.json");
 
 client.events = new Collection();
+client.buttons = new Collection();
 client.commands = new Collection();
 
 //===========================================================
-
+const { loadEvents } = require("./Handlers/eventHandler");
 loadEvents(client);
 
-//===========================================================
+const { loadButtons } = require("./Handlers/buttonHandler");
+loadButtons(client);
 
+//===========================================================
+/*
 // Anti-Crash and more...
 process.on("unhandledRejection", (reason, p) => { Warning(
     '=== [ Unhandled Rejection/Catch ] ==='.toUpperCase(),
@@ -64,7 +66,7 @@ process.on('multipleResolves', (type, promise, reason) => { Warning(
     type, promise, reason,
     '==============================='.toUpperCase());
 });
-
+*/
 //===========================================================
 
 

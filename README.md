@@ -20,8 +20,7 @@ Advantages:
 {
    "BOT_TOKEN": "Enter_discord_bot_token",
 
-   "DEV_ID": "Enter_your_discord_id",
-   "DEBUG_EVENT": false
+   "DEV_ID": "Enter_your_discord_id"
 }
 ```
 

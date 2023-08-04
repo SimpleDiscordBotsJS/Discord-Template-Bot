@@ -16,7 +16,7 @@ async function loadCommands(client) {
 
         commandsArray.push(command.data.toJSON());
 
-        table.adRow(command.data.name, "✔");
+        table.addRow(command.data.name, "✔");
     });
 
     client.application.commands.set(commandsArray);

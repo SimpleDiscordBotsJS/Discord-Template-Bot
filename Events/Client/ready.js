@@ -9,9 +9,9 @@ module.exports = {
      * @param {Client} client 
      */
     execute(client) {
+        loadCommands(client);
+        
         Success(`✅ Launched as a bot: ${client.user.tag}!`);
         client.user.setActivity("Super Bot", {type: "STREAMING"});
-
-        loadCommands(client);
     }
 }
