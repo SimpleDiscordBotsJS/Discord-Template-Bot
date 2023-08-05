@@ -2,7 +2,7 @@
   "name": "discord-template-bot",
   "version": "1.1.0",
   "description": "It's a template for discord bot",
-  "main": "index.js",
+  "main": "Structures/index.js",
   "dependencies": {
     "ascii-table3": "^0.8.2",
     "discord.js": "^14.12.1",

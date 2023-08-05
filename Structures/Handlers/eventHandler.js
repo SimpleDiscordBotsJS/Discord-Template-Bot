@@ -6,9 +6,9 @@ const table = new AsciiTable3().setHeading("Events", "Status");
 async function loadEvents(client) {
     console.time("Events Loaded");
 
-    client.events = new Map();
+    const files = await loadFiles("./Events");
 
-    const files = await loadFiles("Events");
+    client.events = new Map();
 
     for (const file of files) {
         try {
@@ -26,6 +26,7 @@ async function loadEvents(client) {
     }
 
     Info("\n" + table.toString() + "\nLoaded Events.");
+    table.clearRows();
     console.timeEnd("Events Loaded");
 }
 

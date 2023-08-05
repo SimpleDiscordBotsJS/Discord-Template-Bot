@@ -1,6 +1,6 @@
 const { Client } = require("discord.js");
-const { Success } = require("../../Utilities/Logger");
-const { loadCommands } = require("../../Handlers/commandHandler");
+const { Success } = require("../../Structures/Utilities/Logger");
+const { loadCommands } = require("../../Structures/Handlers/commandHandler");
 
 module.exports = {
     name: "ready",

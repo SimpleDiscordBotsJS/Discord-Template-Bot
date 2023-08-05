@@ -23,7 +23,7 @@ const { loadButtons } = require("./Handlers/buttonHandler");
 loadButtons(client);
 
 //===========================================================
-/*
+
 // Anti-Crash and more...
 process.on("unhandledRejection", (reason, p) => { Warning(
     '=== [ Unhandled Rejection/Catch ] ==='.toUpperCase(),
@@ -60,7 +60,7 @@ process.on('exit', (code) => { Warning(
     'Code: ' + code,
     '=============================='.toUpperCase());
 });
-
+/*
 process.on('multipleResolves', (type, promise, reason) => { Warning(
     '==== [ Multiple Resolves ] ===='.toUpperCase(),
     type, promise, reason,
