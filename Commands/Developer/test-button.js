@@ -9,11 +9,11 @@ const { SlashCommandBuilder,
 module.exports = {
     developer: true,
     data: new SlashCommandBuilder()
-    .setName("button-test").setNameLocalizations({
-        "ru": "текст-кнопок"
-    }).setDescription("Test the button handler.").setDescriptionLocalizations({ 
-        "ru": "Протестировать обработчик кнопки."
-    }).setDefaultMemberPermissions(PermissionFlagsBits.Administrator),
+    .setName("button-test")
+    .setNameLocalizations({ "ru": "текст-кнопок" })
+    .setDescription("Test the button handler.")
+    .setDescriptionLocalizations({ "ru": "Протестировать обработчик кнопки."})
+    .setDefaultMemberPermissions(PermissionFlagsBits.Administrator),
     /**
      * @param {ChatInputCommandInteraction} interaction 
      */

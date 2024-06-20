@@ -10,13 +10,13 @@ module.exports = {
     .setDescriptionLocalizations({ ru: "Перезагрузите свои команды/ивенты." })
     .setDefaultMemberPermissions(PermissionFlagsBits.Administrator)
     .addSubcommand((options) => options
-    .setName("events")
-    .setDescription("Reload your events.")
-    .setDescriptionLocalizations({ ru: "Перезагрузите свои ивенты." }))
+        .setName("events")
+        .setDescription("Reload your events.")
+        .setDescriptionLocalizations({ ru: "Перезагрузите свои ивенты." }))
     .addSubcommand((options) => options
-    .setName("commands")
-    .setDescription("Reload your commands.")
-    .setDescriptionLocalizations({ ru: "Перезагрузите свои команды." })),
+        .setName("commands")
+        .setDescription("Reload your commands.")
+        .setDescriptionLocalizations({ ru: "Перезагрузите свои команды." })),
     /**
      * @param {ChatInputCommandInteraction} interaction 
      * @param {Client} client 

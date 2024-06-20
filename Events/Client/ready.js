@@ -12,7 +12,7 @@ module.exports = {
         try {
             loadCommands(client);
             
-            Success(`✅ Launched as a bot: ${client.user.tag}!`);
+            Success(`[BOT] ✅ Launched as a bot: ${client.user.tag}!`);
             client.user.setPresence({
                 activities: [{ name: "Best bot template!", type: ActivityType.Custom }],
                 status: "online",
